@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+
+const fetchData = (fn) =>{
+    axios.get('http://localhost:3000/home/index').then((response)=>{
+        fn(response.data);//这个相当于是fn函数中的参数
+    });
+}
+fetchData(data=>{//箭头函数data就是fn返回的参数
+    console.log(data);
+})
+
+</script>
